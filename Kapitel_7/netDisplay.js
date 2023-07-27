@@ -5,8 +5,8 @@ const width = canvas.width;
 
 const base_factor = 40
 
-const convertCordX = x=>(x+1)*width/(base_factor*2);
-const convertCordY = x=>(-x+1)*width/(base_factor*2);
+const convertCordX = x=>(x+base_factor)*width/(base_factor*2);
+const convertCordY = x=>(-x+base_factor)*width/(base_factor*2);
 
 const density = 0.01 * base_factor;
 // const density = 0.1;
@@ -19,14 +19,37 @@ function updateDisplay() {
             var value = Net.get_value([x, y])[0];
            // console.log(x + "   "  + y + "  -> " + value)
             if (value > 0.5) {
-                ctx.fillStyle = "red";
+                ctx.fillStyle = "#ff9999";
             }
             else {
-                ctx.fillStyle = "blue";
+                ctx.fillStyle = "#9999ff";
             }
             ctx.fillRect(convertCordX(x), convertCordY(y), densityX, densityY);
         }
     }
-    console.log(f(2))
-    console.log("updated")
+
+    for (var i = 0; i < dataPoints.length; i++) {
+    
+        ctx.beginPath();
+        ctx.arc(convertCordX(dataPoints[i].x), convertCordY(dataPoints[i].y), 4, 0, 2 * Math.PI, false);
+        ctx.fillStyle = dataPoints[i].color
+        console.log(dataPoints[i])
+        ctx.fill();
+    } 
+
 }
+
+const dataPoints = []
+
+const spr_fn = x =>  - ((2*x)/(2*x*x+1))
+
+function construct_points(number, spread) {
+    for (var i = 0; i < number; i++) {
+        x_cord = (Math.random() * 2 - 1)
+        y_cord = (Math.random() * 2 - 1)
+        color = spr_fn(x_cord)-spread*Math.random() < y_cord?"blue":"red";
+        dataPoints.push({x: x_cord*base_factor, y:y_cord*base_factor, color:color})
+    }
+}
+
+construct_points(50, 0.1)
