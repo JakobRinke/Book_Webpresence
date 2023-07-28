@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Neuronale Netze</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <header>
+    <!-- place navbar here -->
+  </header>
+  <main>
+    <a href="../#K6"> <img src="../back.png" alt="Zurück" style="width: 60px"> </a>
+    <h1 style="text-align: center;"> Datenvisualisierung </h1>
+    <br><br>
+    <div class="container">
+      <div class="row">
+            <div class="col-md">
+               <div class="mb-5">
+                <h3 style="text-align:center"> Tabelle </h3>
+                <button onclick="table_button(this)">Einklappen</button>
+                <table class="table-primary table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Person</th>
+                      <th scope="col">Film 1</th>
+                      <th scope="col">Film 2</th>
+                      <th scope="col">Film 3</th>
+                      <th scope="col">Film 4</th>
+                    </tr>
+                  </thead>
+                  <tbody id="data_table_people">
+                    <tr class="">
+                      <td scope="row"> NAME </td>
+                      <td> F0</td>
+                      <td> F1</td>
+                      <td> F2</td>
+                      <td> F3</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+               </div>
+               
+
+
+            </div>
+            <div class="col-md mb-5">
+              <h3 style="text-align:center"> Basisdiagramm </h3>
+              <canvas id="baseChart"></canvas>
+
+            </div>
+            <div class="col-md">
+               <h3 style="text-align:center"> Abhängikeitsdiagramm  </h3>
+               <p style="text-align:center"> (Drücke auf eine Leiste in Basisdiagramm)</p>
+                <div class="table mb-3">
+                    <canvas id="spec_chart"> </canvas>
+                </div>
+            </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.2/chart.umd.js" integrity="sha512-KIq/d78rZMlPa/mMe2W/QkRgg+l0/GAAu4mGBacU0OQyPV/7EPoGQChDb269GigVoPQit5CqbNRFbgTjXHHrQg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="people.js"></script>
+    <script src="charter.js"></script>
+
+
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
